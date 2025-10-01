@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "555029426942",
+    "project_id": "rakhoi-2023",
+    "storage_bucket": "rakhoi-2023.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:9beea4178727b50064abaf",
+        "android_client_info": {
+          "package_name": "com.rakhoi.agent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:ac55bd1642ff9f4264abaf",
+        "android_client_info": {
+          "package_name": "com.rakhoi.io"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:0673f9f5964d449c64abaf",
+        "android_client_info": {
+          "package_name": "happypt.knk.AudacityLite.shortcuts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:1484fd9cfcef597e64abaf",
+        "android_client_info": {
+          "package_name": "happypt.knk.garagebandlite.shortcuts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:5c64cde32a05957464abaf",
+        "android_client_info": {
+          "package_name": "knk.office.KingSoftOfficeMobile.shortcuts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555029426942:android:7b3f6ace9251d8a564abaf",
+        "android_client_info": {
+          "package_name": "knk.office.OpenOffice.Tutorials"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUwNtG5Wn8mbEhHyYa8wAiQ8KJN4m6Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
