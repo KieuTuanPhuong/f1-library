@@ -1,17 +1,35 @@
 import 'package:get/get.dart';
 
-import '../../data/provider/provider.dart';
-
 class HomeController extends GetxController {
-  final Provider provider = Provider();
-
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
+    // isLogin = sl.get<SharedPreferenceHelper>().getLogin;
+    // print("hhhhhhhhh $isLogin");
+    // onCheckLogin();
   }
+
+  List menu = [
+    {
+      'title': 'Drivers',
+      'description': 'Hello',
+    },
+    {
+      'title': 'Teams',
+      'description': 'Hello',
+    },
+    {
+      'title': 'Seasons',
+      'description': 'Hello',
+    },
+  ];
 
   @override
   void dispose() {
     super.dispose();
+  }
+
+  void onClose() {
+    super.onClose();
   }
 }

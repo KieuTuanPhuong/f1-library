@@ -12,8 +12,8 @@ class AppPages {
   static List<GetPage> list = [
     ...RootViewRoutes.list,
     ...SplashRoutes.list,
-    ...AuthRoutes.list,
+    // ...AuthRoutes.list,
     ...ProfileRoutes.list,
-    ...NotificationsRoutes.list,
+    // ...NotificationsRoutes.list,
   ];
 }

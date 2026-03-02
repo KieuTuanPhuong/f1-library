@@ -14,13 +14,13 @@ class LoginHelper {
     return false;
   }
 
-  static void requestLogin({required Function() loginSuccess}) {
-    Get.toNamed(AuthRoutes.LOGIN, arguments: {'requestLogin': true})?.then((value) {
-      if (value != null && value == true) {
-        loginSuccess();
-      }
-    });
-  }
+  // static void requestLogin({required Function() loginSuccess}) {
+  //   Get.toNamed(AuthRoutes.LOGIN, arguments: {'requestLogin': true})?.then((value) {
+  //     if (value != null && value == true) {
+  //       loginSuccess();
+  //     }
+  //   });
+  // }
 
   static bool haveApproveMember() {
     final approveStatus = sl<SharedPreferenceHelper>().getApproveMemberStatus;

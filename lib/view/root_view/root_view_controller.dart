@@ -14,7 +14,8 @@ import '../../helper/rk_alert.dart';
 import '../../sharedpref/shared_preference_helper.dart';
 import '../home/home_page.dart';
 
-class RootViewController extends GetxController with GetSingleTickerProviderStateMixin {
+class RootViewController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   final Connectivity connectivity = Connectivity();
 
   final Provider provider = Provider();
@@ -73,80 +74,80 @@ class RootViewController extends GetxController with GetSingleTickerProviderStat
       'page': HomePage(),
       'badge': 0,
     },
-    {
-      'label': "Danh mục",
-      'icon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_2,
-        ),
-      ),
-      'selectedIcon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_2_fill,
-          // color: ColorResources.COLOR_EE3439,
-        ),
-      ),
-      'page': HomePage(),
-      'badge': 0,
-    },
-    {
-      'label': "Tìm kiếm",
-      'icon': Container(
-        child: Container(
-          alignment: Alignment.center,
-          child: RkImage(
-            ImagesPath.ic_bottom_nav_3,
-          ),
-        ),
-      ),
-      'selectedIcon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_3_fill,
-          // color: ColorResources.COLOR_EE3439,
-        ),
-      ),
-      'page': HomePage(),
-      'badge': 0,
-    },
-    {
-      'label': "Yêu thích",
-      'icon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_4,
-        ),
-      ),
-      'selectedIcon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_4_fill,
-          // color: ColorResources.COLOR_EE3439,
-        ),
-      ),
-      'page': HomePage(),
-      'badge': 0,
-    },
-    {
-      'label': "Cá nhân",
-      'icon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_5,
-        ),
-      ),
-      'selectedIcon': Container(
-        alignment: Alignment.center,
-        child: RkImage(
-          ImagesPath.ic_bottom_nav_5_fill,
-          // color: ColorResources.COLOR_EE3439,
-        ),
-      ),
-      'page': HomePage(),
-      'badge': 0,
-    },
+    // {
+    //   'label': "Danh mục",
+    //   'icon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_2,
+    //     ),
+    //   ),
+    //   'selectedIcon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_2_fill,
+    //       // color: ColorResources.COLOR_EE3439,
+    //     ),
+    //   ),
+    //   'page': HomePage(),
+    //   'badge': 0,
+    // },
+    // {
+    //   'label': "Tìm kiếm",
+    //   'icon': Container(
+    //     child: Container(
+    //       alignment: Alignment.center,
+    //       child: RkImage(
+    //         ImagesPath.ic_bottom_nav_3,
+    //       ),
+    //     ),
+    //   ),
+    //   'selectedIcon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_3_fill,
+    //       // color: ColorResources.COLOR_EE3439,
+    //     ),
+    //   ),
+    //   'page': HomePage(),
+    //   'badge': 0,
+    // },
+    // {
+    //   'label': "Yêu thích",
+    //   'icon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_4,
+    //     ),
+    //   ),
+    //   'selectedIcon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_4_fill,
+    //       // color: ColorResources.COLOR_EE3439,
+    //     ),
+    //   ),
+    //   'page': HomePage(),
+    //   'badge': 0,
+    // },
+    // {
+    //   'label': "Cá nhân",
+    //   'icon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_5,
+    //     ),
+    //   ),
+    //   'selectedIcon': Container(
+    //     alignment: Alignment.center,
+    //     child: RkImage(
+    //       ImagesPath.ic_bottom_nav_5_fill,
+    //       // color: ColorResources.COLOR_EE3439,
+    //     ),
+    //   ),
+    //   'page': HomePage(),
+    //   'badge': 0,
+    // },
   ];
 
   @override
@@ -158,33 +159,34 @@ class RootViewController extends GetxController with GetSingleTickerProviderStat
     super.onClose();
   }
 
-  void onChangedPage(int index) {
-    if (index == 4 && !LoginHelper.haveUser()) {
-      LoginHelper.requestLogin(loginSuccess: () {
-        currentIndex.value = index;
-        prevIndex.value = 1;
-        log("prevIndex.value ${prevIndex.value}");
-      });
-      log("prevIndex.value 1 ${prevIndex.value}");
-    } else if (index == 3 && !LoginHelper.haveUser()) {
-      LoginHelper.requestLogin(loginSuccess: () {
-        currentIndex.value = index;
-        prevIndex.value = currentIndex.value;
-      });
-    } else {
-      currentIndex.value = index;
-      update();
-    }
-  }
+  // void onChangedPage(int index) {
+  //   if (index == 4 && !LoginHelper.haveUser()) {
+  //     LoginHelper.requestLogin(loginSuccess: () {
+  //       currentIndex.value = index;
+  //       prevIndex.value = 1;
+  //       log("prevIndex.value ${prevIndex.value}");
+  //     });
+  //     log("prevIndex.value 1 ${prevIndex.value}");
+  //   } else if (index == 3 && !LoginHelper.haveUser()) {
+  //     LoginHelper.requestLogin(loginSuccess: () {
+  //       currentIndex.value = index;
+  //       prevIndex.value = currentIndex.value;
+  //     });
+  //   } else {
+  //     currentIndex.value = index;
+  //     update();
+  //   }
+  // }
 
-  void onLogOutSuccess() {
-    onChangedPage(0);
-  }
+  // void onLogOutSuccess() {
+  //   onChangedPage(0);
+  // }
 
   Future<bool> onDoubleBack() {
     EasyLoading.dismiss();
     final DateTime now = DateTime.now();
-    if (currentBackPressTime == null || now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
+    if (currentBackPressTime == null ||
+        now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
       RkAlert.info(message: "Bạn muốn thoát ứng dụng");
       return Future.value(false);

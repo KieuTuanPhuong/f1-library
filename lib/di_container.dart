@@ -17,7 +17,7 @@ Future<void> init() async {
   sl.registerSingleton<RkSize>(RkSize());
   sl.registerSingleton<LoggingInterceptor>(LoggingInterceptor());
   sl.registerLazySingleton(() => Connectivity());
-  sl.registerSingleton<MyNotification>(MyNotification());
+  // sl.registerSingleton<MyNotification>(MyNotification());
 
   // Core
   sl.registerLazySingleton(() => RkNetwork(sl()));

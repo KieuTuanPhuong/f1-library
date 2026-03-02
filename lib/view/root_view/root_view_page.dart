@@ -19,7 +19,8 @@ class RootViewPage extends GetView<RootViewController> {
           onPopInvokedWithResult: (didPop, result) => value.onDoubleBack(),
           child: Scaffold(
             backgroundColor: ColorResources.BACKGROUND,
-            body: Obx(() => controller.pages[controller.currentIndex.value]['page'] as Widget),
+            body: Obx(() => controller.pages[controller.currentIndex.value]
+                ['page'] as Widget),
             bottomNavigationBar: bottomNavigator(context),
           ),
         );
@@ -27,10 +28,11 @@ class RootViewPage extends GetView<RootViewController> {
     );
   }
 
-  Widget onSelected(BuildContext context, {required String title, required RkImage icon, required int index}) {
+  Widget onSelected(BuildContext context,
+      {required String title, required RkImage icon, required int index}) {
     return Material(
       child: GestureDetector(
-        onTap: () => controller.onChangedPage(index),
+        // onTap: () => controller.onChangedPage(index),
         child: SizedBox(
           width: RkDimensions.screenSize.width / controller.pages.length,
           height: double.infinity,
@@ -49,7 +51,9 @@ class RootViewPage extends GetView<RootViewController> {
                 () => Text(
                   title,
                   style: TextStyle(
-                    color: controller.currentIndex.value == index ? ColorResources.COLOR_080808 : Colors.grey,
+                    color: controller.currentIndex.value == index
+                        ? ColorResources.COLOR_080808
+                        : Colors.grey,
                   ),
                 ),
               )
@@ -103,14 +107,18 @@ class RootViewPage extends GetView<RootViewController> {
                 margin: EdgeInsets.only(bottom: RkDimensions.ONE_UNIT_FONT * 5),
                 child: controller.pages[index]['selectedIcon'] as Widget,
               ),
-              badgeCount: RkNumber.parseInt(controller.pages[index]['badgeCount']),
-              showBadge: RkNumber.parseInt(controller.pages[index]['badgeCount']) == 0 ? false : true,
+              badgeCount:
+                  RkNumber.parseInt(controller.pages[index]['badgeCount']),
+              showBadge:
+                  RkNumber.parseInt(controller.pages[index]['badgeCount']) == 0
+                      ? false
+                      : true,
             );
           })
         ],
         currentIndex: controller.currentIndex.value,
         onTap: (index) {
-          controller.onChangedPage(index);
+          // controller.onChangedPage(index);
         },
       ),
     );

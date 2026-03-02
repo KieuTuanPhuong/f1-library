@@ -245,11 +245,11 @@ class SplashController extends GetxController {
       data: deleteMemberRequest.toJson(),
       onSuccess: (data) {
         sl<SharedPreferenceHelper>().setJwtToken("");
-        Get.offNamed(AuthRoutes.LOGIN);
+        // Get.offNamed(AuthRoutes.LOGIN);
         update();
       },
       onError: (onError) {
-        Get.offNamed(AuthRoutes.LOGIN);
+        // Get.offNamed(AuthRoutes.LOGIN);
       },
     );
 
