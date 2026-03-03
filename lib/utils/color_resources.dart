@@ -4,6 +4,12 @@ import 'package:flutter/material.dart';
 class ColorResources {
   static const Color PRIMARY_BG_COLOR_RED_DARK = Color(0xffB80F14);
   static const Color PRIMARY_CONTENT_COLOR = Color(0xffFFFFFF);
+  static const Color RACING_RED = Color(0xffF20D0D);
+  static const Color CARBON_BLACK = Color(0xff120808);
+  static const Color LIGHT_GRAY = Color(0xff71717A);
+  static const Color BACKGROUND_BLACK = Color(0xff050505);
+  static const Color STROKE = Color(0xff27272A);
+  static const Color SECONDARY_RED = Color(0xffE10600);
 
   static const Color SUCCESS_TOAST = Color(0x8000ff00);
   static const Color ERROR_TOAST = Color(0x80ff0000);

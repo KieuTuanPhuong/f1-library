@@ -5,7 +5,7 @@ ThemeData lightTheme = ThemeData(
   primaryColor: const Color(0xFF0DAC43),
   brightness: Brightness.light,
   useMaterial3: false,
-  // scaffoldBackgroundColor: ColorResources.BACKGROUND,
+  // scaffoldBackgroundColor: ColorResources.BACKGROUND_BLACK,
   hintColor: const Color(0xFF9E9E9E),
   pageTransitionsTheme: const PageTransitionsTheme(builders: {
     TargetPlatform.android: ZoomPageTransitionsBuilder(),
