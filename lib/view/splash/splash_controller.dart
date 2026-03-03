@@ -1,28 +1,19 @@
 import 'dart:io';
-import 'dart:ui' as ui;
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // import 'package:sizer/sizer.dart';
 
-import '../../data/api_endpoint/api_endpoint.dart';
-import '../../data/model/auth/deleteMemberRequest.dart';
-import '../../data/model/profile/system_setting_response.dart';
 import '../../data/provider/provider.dart';
 import '../../di_container.dart';
-import '../../helper/rk_validate.dart';
-import '../../routes/route_path/auth_routes.dart';
 import '../../routes/route_path/home_routes.dart';
 import '../../sharedpref/shared_preference_helper.dart';
-import '../../utils/images_path.dart';
 
 class SplashController extends GetxController {
   LatLng? location;
@@ -39,32 +30,32 @@ class SplashController extends GetxController {
   // DeviceType deviceType = DeviceType.mobile;
   bool? isLogin = false;
   final Provider provider = Provider();
-  DeleteMemberRequest deleteMemberRequest = DeleteMemberRequest();
-  VersionApp? versionApp;
-  String? versionAndroid;
-  String? versionIos;
-  String? currentVersion;
+  // DeleteMemberRequest deleteMemberRequest = DeleteMemberRequest();
+  // VersionApp? versionApp;
+  // String? versionAndroid;
+  // String? versionIos;
+  // String? currentVersion;
 
   @override
   void onInit() async {
     super.onInit();
-    requestCurrentLocation();
+    // requestCurrentLocation();
     // onCheckDevice();
-    if (Platform.isIOS) {
-      BitmapDescriptor.fromAssetImage(ImageConfiguration(size: Size(0, 0)), ImagesPath.test).then((d) {
-        customIcon = d;
-        update();
-      });
-    } else {
-      BitmapDescriptor.fromAssetImage(ImageConfiguration(size: Size(1, 1)), ImagesPath.test).then((d) {
-        customIcon = d;
-        update();
-      });
-    }
+    // if (Platform.isIOS) {
+    //   BitmapDescriptor.fromAssetImage(ImageConfiguration(size: Size(0, 0)), ImagesPath.test).then((d) {
+    //     customIcon = d;
+    //     update();
+    //   });
+    // } else {
+    //   BitmapDescriptor.fromAssetImage(ImageConfiguration(size: Size(1, 1)), ImagesPath.test).then((d) {
+    //     customIcon = d;
+    //     update();
+    //   });
+    // }
     await FirebaseAnalytics.instance.logAppOpen();
     Future.delayed(const Duration(seconds: 1), () {
-      onGetInformationSystem();
-      // checkGuard();
+      // onGetInformationSystem();
+      checkGuard();
     });
 
     // isLogin = sl.get<SharedPreferenceHelper>().getLogin;
@@ -87,7 +78,8 @@ class SplashController extends GetxController {
     final currentParts = current.split('.').map(int.parse).toList();
     final latestParts = latest.split('.').map(int.parse).toList();
     for (int i = 0; i < latestParts.length; i++) {
-      if (i >= currentParts.length || currentParts[i] < latestParts[i]) return true;
+      if (i >= currentParts.length || currentParts[i] < latestParts[i])
+        return true;
       if (currentParts[i] > latestParts[i]) return false;
     }
     return false;
@@ -99,7 +91,8 @@ class SplashController extends GetxController {
       context: context,
       builder: (_) => AlertDialog(
         title: Text('Cập nhật cần thiết'),
-        content: Text('Có phiên bản mới. Vui lòng cập nhật để tiếp tục sử dụng.'),
+        content:
+            Text('Có phiên bản mới. Vui lòng cập nhật để tiếp tục sử dụng.'),
         actions: [
           if (!forceUpdate)
             TextButton(
@@ -112,12 +105,14 @@ class SplashController extends GetxController {
 
               if (Platform.isAndroid) {
                 launchUrl(
-                  Uri.parse('https://play.google.com/store/apps/details?id=knk.office.KingSoftOfficeMobile.shortcuts'),
+                  Uri.parse(
+                      'https://play.google.com/store/apps/details?id=knk.office.KingSoftOfficeMobile.shortcuts'),
                   mode: LaunchMode.externalApplication,
                 );
               } else {
                 launchUrl(
-                  Uri.parse('https://apps.apple.com/cz/app/s%C3%A0n-giao-d%E1%BB%8Bch-b%C4%91s-ra-kh%C6%A1i-vn/id6475702859'),
+                  Uri.parse(
+                      'https://apps.apple.com/cz/app/s%C3%A0n-giao-d%E1%BB%8Bch-b%C4%91s-ra-kh%C6%A1i-vn/id6475702859'),
                   mode: LaunchMode.externalApplication,
                 );
               }
@@ -129,89 +124,93 @@ class SplashController extends GetxController {
     );
   }
 
-  void onGetInformationSystem() async {
-    await provider.get(
-      endPoint: APIEndPoint.getInformation,
-      onSuccess: (data) async {
-        if (!RkValidate.nullOrEmpty(data) && !RkValidate.nullOrEmpty(data['version_app'])) {
-          versionApp = VersionApp.fromJson(data['version_app_agent'] as Map<String, dynamic>);
-          versionAndroid = versionApp!.appAndroid;
-          versionIos = versionApp!.appIos;
-          PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  // void onGetInformationSystem() async {
+  //   await provider.get(
+  //     endPoint: APIEndPoint.getInformation,
+  //     onSuccess: (data) async {
+  //       if (!RkValidate.nullOrEmpty(data) &&
+  //           !RkValidate.nullOrEmpty(data['version_app'])) {
+  //         versionApp = VersionApp.fromJson(
+  //             data['version_app_agent'] as Map<String, dynamic>);
+  //         versionAndroid = versionApp!.appAndroid;
+  //         versionIos = versionApp!.appIos;
+  //         PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-          String appName = packageInfo.appName;
-          String packageName = packageInfo.packageName;
-          String version = packageInfo.version;
-          String buildNumber = packageInfo.buildNumber;
-          print("object ${appName} - ${packageName} - ${version} - ${buildNumber}");
-          if (Platform.isAndroid) {
-            currentVersion = "${version}.${buildNumber}";
-          } else {
-            currentVersion = "${version}.${buildNumber}";
-          }
-          if (Platform.isAndroid) {
-            if (isOlderVersion(currentVersion!, versionAndroid!)) {
-              showUpdateDialog(Get.context!, true);
-            } else {
-              checkGuard();
-            }
-          } else {
-            if (isOlderVersion(currentVersion!, versionIos!)) {
-              showUpdateDialog(Get.context!, true);
-            } else {
-              checkGuard();
-            }
-          }
-        }
-        update();
-      },
-      onError: (onError) {
-        checkGuard();
-      },
-    );
-  }
+  //         String appName = packageInfo.appName;
+  //         String packageName = packageInfo.packageName;
+  //         String version = packageInfo.version;
+  //         String buildNumber = packageInfo.buildNumber;
+  //         print(
+  //             "object ${appName} - ${packageName} - ${version} - ${buildNumber}");
+  //         if (Platform.isAndroid) {
+  //           currentVersion = "${version}.${buildNumber}";
+  //         } else {
+  //           currentVersion = "${version}.${buildNumber}";
+  //         }
+  //         if (Platform.isAndroid) {
+  //           if (isOlderVersion(currentVersion!, versionAndroid!)) {
+  //             showUpdateDialog(Get.context!, true);
+  //           } else {
+  //             checkGuard();
+  //           }
+  //         } else {
+  //           if (isOlderVersion(currentVersion!, versionIos!)) {
+  //             showUpdateDialog(Get.context!, true);
+  //           } else {
+  //             checkGuard();
+  //           }
+  //         }
+  //       }
+  //       update();
+  //     },
+  //     onError: (onError) {
+  //       checkGuard();
+  //     },
+  //   );
+  // }
 
-  void addPoint(LatLng point) {
-    points.add(point);
-    polylines.add(Polyline(
-      polylineId: PolylineId('polyline_${polylines.length}'),
-      points: points,
-      color: Colors.blue,
-      width: 5,
-    ));
-    print("polyline_${polylines.length}");
-    polygons.add(Polygon(
-      polygonId: PolygonId('polygon_${polygons.length}'),
-      points: points,
-      fillColor: Colors.green.withOpacity(0.5),
-      strokeColor: Colors.green,
-      strokeWidth: 2,
-    ));
+  // void addPoint(LatLng point) {
+  //   points.add(point);
+  //   polylines.add(Polyline(
+  //     polylineId: PolylineId('polyline_${polylines.length}'),
+  //     points: points,
+  //     color: Colors.blue,
+  //     width: 5,
+  //   ));
+  //   print("polyline_${polylines.length}");
+  //   polygons.add(Polygon(
+  //     polygonId: PolygonId('polygon_${polygons.length}'),
+  //     points: points,
+  //     fillColor: Colors.green.withOpacity(0.5),
+  //     strokeColor: Colors.green,
+  //     strokeWidth: 2,
+  //   ));
 
-    circles.add(Circle(
-      circleId: CircleId('circle_${circles.length}'),
-      center: point,
-      radius: 100,
-      fillColor: Colors.red.withOpacity(0.5),
-      strokeColor: Colors.red,
-      strokeWidth: 2,
-    ));
-    update();
-  }
+  //   circles.add(Circle(
+  //     circleId: CircleId('circle_${circles.length}'),
+  //     center: point,
+  //     radius: 100,
+  //     fillColor: Colors.red.withOpacity(0.5),
+  //     strokeColor: Colors.red,
+  //     strokeWidth: 2,
+  //   ));
+  //   update();
+  // }
 
-  void clearDrawings() {
-    points.clear();
-    polylines.clear();
-    polygons.clear();
-    circles.clear();
-    update();
-  }
+  // void clearDrawings() {
+  //   points.clear();
+  //   polylines.clear();
+  //   polygons.clear();
+  //   circles.clear();
+  //   update();
+  // }
 
-  void addMaker(LatLng latLng) {
-    markers.add(Marker(markerId: MarkerId('1'), icon: customIcon!, position: latLng));
-    // mapController!.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: latLng, zoom: 13)));
-    update();
-  }
+  // void addMaker(LatLng latLng) {
+  //   markers.add(
+  //       Marker(markerId: MarkerId('1'), icon: customIcon!, position: latLng));
+  //   // mapController!.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: latLng, zoom: 13)));
+  //   update();
+  // }
 
   Future<LocationData> requestCurrentLocation() async {
     final location = Location();
@@ -231,42 +230,47 @@ class SplashController extends GetxController {
     }
   }
 
-  Future<Uint8List> getBytesFromAsset(String path, int width) async {
-    ByteData data = await rootBundle.load(path);
-    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(), targetWidth: width);
-    ui.FrameInfo fi = await codec.getNextFrame();
-    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
-  }
+  // Future<Uint8List> getBytesFromAsset(String path, int width) async {
+  //   ByteData data = await rootBundle.load(path);
+  //   ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+  //       targetWidth: width);
+  //   ui.FrameInfo fi = await codec.getNextFrame();
+  //   return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!
+  //       .buffer
+  //       .asUint8List();
+  // }
 
-  void onLogOut() {
-    provider.post(
-      endPoint: APIEndPoint.signOutMember,
-      bodyIsFormData: true,
-      data: deleteMemberRequest.toJson(),
-      onSuccess: (data) {
-        sl<SharedPreferenceHelper>().setJwtToken("");
-        // Get.offNamed(AuthRoutes.LOGIN);
-        update();
-      },
-      onError: (onError) {
-        // Get.offNamed(AuthRoutes.LOGIN);
-      },
-    );
+  // void onLogOut() {
+  //   provider.post(
+  //     endPoint: APIEndPoint.signOutMember,
+  //     bodyIsFormData: true,
+  //     data: deleteMemberRequest.toJson(),
+  //     onSuccess: (data) {
+  //       sl<SharedPreferenceHelper>().setJwtToken("");
+  //       // Get.offNamed(AuthRoutes.LOGIN);
+  //       update();
+  //     },
+  //     onError: (onError) {
+  //       // Get.offNamed(AuthRoutes.LOGIN);
+  //     },
+  //   );
 
-    update();
-  }
+  //   update();
+  // }
 
   void checkGuard() {
-    if (access_token == "") {
-      // onLogOut();
-      // Get.offNamedUntil(AuthRoutes.LOGIN, (route) => route.isFirst);
-      // Get.offNamed(AuthRoutes.LOGIN);
-      Get.offNamedUntil(RootViewRoutes.ROOT_VIEW, (route) => route.isFirst);
-    } else {
-      // onLogOut();
-      // Get.offNamedUntil(AuthRoutes.LOGIN, (route) => route.isFirst);
-      // Get.offNamed(AuthRoutes.LOGIN);
-      Get.offNamedUntil(RootViewRoutes.ROOT_VIEW, (route) => route.isFirst);
-    }
+    // For F1 API version, skip authentication and go straight to RootView
+    Get.offNamedUntil(RootViewRoutes.ROOT_VIEW, (route) => route.isFirst);
+    // if (access_token == "") {
+    //   // onLogOut();
+    //   // Get.offNamedUntil(AuthRoutes.LOGIN, (route) => route.isFirst);
+    //   // Get.offNamed(AuthRoutes.LOGIN);
+    //   Get.offNamedUntil(RootViewRoutes.ROOT_VIEW, (route) => route.isFirst);
+    // } else {
+    //   // onLogOut();
+    //   // Get.offNamedUntil(AuthRoutes.LOGIN, (route) => route.isFirst);
+    //   // Get.offNamed(AuthRoutes.LOGIN);
+    //   Get.offNamedUntil(RootViewRoutes.ROOT_VIEW, (route) => route.isFirst);
+    // }
   }
 }

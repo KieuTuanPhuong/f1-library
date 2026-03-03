@@ -9,7 +9,7 @@ const String required_file_path = "member/required_file/";
 const String file_path_reward = "system/";
 
 // server dev
-const String BASE_URL = 'https://api.rakhoi.vn';
+const String BASE_URL = 'https://f1connectapi.vercel.app';
 const String BASE_URL_IMAGE = 'https://api.rakhoi.vn/storage/';
 // const String BASE_URL = 'http://192.168.1.21:3000';
 // const String BASE_URL_IMAGE = 'http://192.168.1.21:3000/storage/';
