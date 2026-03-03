@@ -6,6 +6,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:template/base_widget/rk_image.dart';
 import 'package:template/data/provider/provider.dart';
+import 'package:template/utils/color_resources.dart';
 import 'package:template/utils/images_path.dart';
 
 import '../../di_container.dart';
@@ -57,97 +58,81 @@ class RootViewController extends GetxController
 
   List<Map<String, dynamic>> pages = [
     {
-      'label': "Trang chủ",
+      'label': "HOME",
       'icon': Container(
         alignment: Alignment.center,
         child: RkImage(
-          ImagesPath.ic_bottom_nav_1,
+          ImagesPath.ic_home_svg,
+          color: ColorResources.LIGHT_GRAY,
         ),
       ),
       'selectedIcon': Container(
         alignment: Alignment.center,
         child: RkImage(
-          ImagesPath.ic_bottom_nav_1_fill,
-          // color: ColorResources.COLOR_EE3439,
+          ImagesPath.ic_home_svg,
+          color: ColorResources.SECONDARY_RED,
         ),
       ),
       'page': HomePage(),
       'badge': 0,
     },
-    // {
-    //   'label': "Danh mục",
-    //   'icon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_2,
-    //     ),
-    //   ),
-    //   'selectedIcon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_2_fill,
-    //       // color: ColorResources.COLOR_EE3439,
-    //     ),
-    //   ),
-    //   'page': HomePage(),
-    //   'badge': 0,
-    // },
-    // {
-    //   'label': "Tìm kiếm",
-    //   'icon': Container(
-    //     child: Container(
-    //       alignment: Alignment.center,
-    //       child: RkImage(
-    //         ImagesPath.ic_bottom_nav_3,
-    //       ),
-    //     ),
-    //   ),
-    //   'selectedIcon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_3_fill,
-    //       // color: ColorResources.COLOR_EE3439,
-    //     ),
-    //   ),
-    //   'page': HomePage(),
-    //   'badge': 0,
-    // },
-    // {
-    //   'label': "Yêu thích",
-    //   'icon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_4,
-    //     ),
-    //   ),
-    //   'selectedIcon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_4_fill,
-    //       // color: ColorResources.COLOR_EE3439,
-    //     ),
-    //   ),
-    //   'page': HomePage(),
-    //   'badge': 0,
-    // },
-    // {
-    //   'label': "Cá nhân",
-    //   'icon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_5,
-    //     ),
-    //   ),
-    //   'selectedIcon': Container(
-    //     alignment: Alignment.center,
-    //     child: RkImage(
-    //       ImagesPath.ic_bottom_nav_5_fill,
-    //       // color: ColorResources.COLOR_EE3439,
-    //     ),
-    //   ),
-    //   'page': HomePage(),
-    //   'badge': 0,
-    // },
+    {
+      'label': "STATS",
+      'icon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_stats,
+          color: ColorResources.LIGHT_GRAY,
+        ),
+      ),
+      'selectedIcon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_stats,
+          color: ColorResources.SECONDARY_RED,
+        ),
+      ),
+      'page': Container(),
+      'badge': 0,
+    },
+    {
+      'label': "CALENDAR",
+      'icon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_calendar,
+          color: ColorResources.LIGHT_GRAY,
+        ),
+      ),
+      'selectedIcon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_calendar,
+          color: ColorResources.SECONDARY_RED,
+        ),
+      ),
+      'page': Container(),
+      'badge': 0,
+    },
+    {
+      'label': "MORE",
+      'icon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_more,
+          color: ColorResources.LIGHT_GRAY,
+        ),
+      ),
+      'selectedIcon': Container(
+        alignment: Alignment.center,
+        child: RkImage(
+          ImagesPath.ic_more,
+          color: ColorResources.SECONDARY_RED,
+        ),
+      ),
+      'page': Container(),
+      'badge': 0,
+    },
   ];
 
   @override

@@ -38,14 +38,17 @@ class ImagesPath {
   static const String ic_eye_close = 'assets/svg/ic_eye_close.svg';
   static const String ic_earth = 'assets/svg/ic_earth.svg';
 
-  static const String background_gradient = 'assets/images/background_gradient.png';
-  static const String background_app_bar = 'assets/images/background_app_bar.png';
+  static const String background_gradient =
+      'assets/images/background_gradient.png';
+  static const String background_app_bar =
+      'assets/images/background_app_bar.png';
 
   static const String ic_back = 'assets/svg/ic_back.svg';
   static const String ic_search = 'assets/svg/ic_search.svg';
   static const String ic_calendar = 'assets/svg/ic_calendar.svg';
   static const String ic_lesson = 'assets/svg/ic_lesson.svg';
-  static const String ic_lesson_status_yellow = 'assets/svg/ic_lesson_status_yellow.svg';
+  static const String ic_lesson_status_yellow =
+      'assets/svg/ic_lesson_status_yellow.svg';
   // static const String ic_edit = 'assets/svg/ic_edit.svg';
   static const String ic_send = 'assets/svg/ic_send.svg';
   static const String ic_file = 'assets/svg/ic_file.svg';
@@ -67,19 +70,40 @@ class ImagesPath {
   static const String ic_vn = 'assets/svg/ic_vn.png';
   static const String ic_english = 'assets/svg/ic_english.png';
   static const String ic_earth_red = 'assets/svg/ic_earth_red.svg';
+  static const String human_home_svg = 'assets/svg/human_home.svg';
+  static const String ic_cup = 'assets/svg/ic_cup.svg';
+  static const String ic_flag = 'assets/svg/ic_flag.svg';
+  static const String ic_helmet = 'assets/svg/ic_helmet.svg';
+  static const String ic_home_svg = 'assets/svg/ic_home.svg';
+  static const String ic_leaderboard = 'assets/svg/ic_leaderboard.svg';
+  static const String ic_map = 'assets/svg/ic_map.svg';
+  static const String ic_more = 'assets/svg/ic_more.svg';
+  static const String ic_people = 'assets/svg/ic_people.svg';
+  static const String ic_person = 'assets/svg/ic_person.svg';
+  static const String ic_stats = 'assets/svg/ic_stats.svg';
+  static const String ic_time = 'assets/svg/ic_time.svg';
+  static const String ic_track = 'assets/svg/ic_track.svg';
+  static const String ic_user_svg = 'assets/svg/ic_user.svg';
+  static const String ic_vn_svg = 'assets/svg/ic_vn.svg';
+  static const String ic_english_svg = 'assets/svg/ic_english.svg';
   static const String img_add = 'assets/images/img_add.png';
 
   static const String img_splash = 'assets/images/img_splash.png';
   static const String ic_bottom_nav_1 = 'assets/images/ic_bottom_nav_1.png';
-  static const String ic_bottom_nav_1_fill = 'assets/images/ic_bottom_nav_1_fill.png';
+  static const String ic_bottom_nav_1_fill =
+      'assets/images/ic_bottom_nav_1_fill.png';
   static const String ic_bottom_nav_2 = 'assets/images/ic_bottom_nav_2.png';
-  static const String ic_bottom_nav_2_fill = 'assets/images/ic_bottom_nav_2_fill.png';
+  static const String ic_bottom_nav_2_fill =
+      'assets/images/ic_bottom_nav_2_fill.png';
   static const String ic_bottom_nav_3 = 'assets/images/ic_bottom_nav_3.png';
-  static const String ic_bottom_nav_3_fill = 'assets/images/ic_bottom_nav_3_fill.png';
+  static const String ic_bottom_nav_3_fill =
+      'assets/images/ic_bottom_nav_3_fill.png';
   static const String ic_bottom_nav_4 = 'assets/images/ic_bottom_nav_4.png';
-  static const String ic_bottom_nav_4_fill = 'assets/images/ic_bottom_nav_4_fill.png';
+  static const String ic_bottom_nav_4_fill =
+      'assets/images/ic_bottom_nav_4_fill.png';
   static const String ic_bottom_nav_5 = 'assets/images/ic_bottom_nav_5.png';
-  static const String ic_bottom_nav_5_fill = 'assets/images/ic_bottom_nav_5_fill.png';
+  static const String ic_bottom_nav_5_fill =
+      'assets/images/ic_bottom_nav_5_fill.png';
 
   static const String img_customer = 'assets/images/img_customer.png';
 
@@ -94,10 +118,13 @@ class ImagesPath {
   static const String img_success_green = 'assets/images/img_success_green.png';
 
   static const String test = 'assets/images/test.png';
-  static const String img_logo_rakhoiweb = 'assets/images/img_logo_rakhoiweb.png';
+  static const String img_logo_rakhoiweb =
+      'assets/images/img_logo_rakhoiweb.png';
   static const String img_splash_tablet = 'assets/images/img_splash_tablet.png';
-  static const String img_splash_landscape = 'assets/images/img_splash_landscape.png';
-  static const String img_background_home = 'assets/images/img_background_home.png';
+  static const String img_splash_landscape =
+      'assets/images/img_splash_landscape.png';
+  static const String img_background_home =
+      'assets/images/img_background_home.png';
 
   static const String img_bg_login = 'assets/images/img_bg_login.png';
   static const String img_bg_register = 'assets/images/img_bg_register.png';

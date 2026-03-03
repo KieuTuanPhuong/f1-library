@@ -15,7 +15,7 @@ class BackgroundDefault extends StatelessWidget {
       bottom: false,
       top: false,
       child: Scaffold(
-        backgroundColor: ColorResources.COLOR_F6F6F6,
+        backgroundColor: ColorResources.BACKGROUND_BLACK,
         body: Stack(children: [
           // Positioned.fill(
           //   child: DgvImage(

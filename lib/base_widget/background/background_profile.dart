@@ -1,3 +1,4 @@
+import 'package:template/utils/color_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../utils/images_path.dart';
@@ -14,7 +15,7 @@ class BackgroundProfile extends StatelessWidget {
       bottom: false,
       top: false,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorResources.BACKGROUND_BLACK,
         body: Stack(children: [
           // Positioned(
           //   child: DgvImage(

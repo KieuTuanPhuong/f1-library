@@ -15,14 +15,15 @@ class BackgroundGradient extends StatelessWidget {
       bottom: false,
       top: false,
       child: Scaffold(
-        backgroundColor: ColorResources.BACKGROUND,
+        backgroundColor: ColorResources.BACKGROUND_BLACK,
         body:
             // SizedBox(),
             Container(
           height: Get.height,
           width: Get.width,
           decoration: BoxDecoration(
-            image: DecorationImage(image: ExactAssetImage(ImagesPath.img_bg_login)),
+            image: DecorationImage(
+                image: ExactAssetImage(ImagesPath.img_bg_login)),
             // color: ColorResources.BLACK,
             // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25.0), bottomRight: Radius.circular(25.0)),
             // gradient: LinearGradient(

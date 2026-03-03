@@ -18,7 +18,7 @@ class RootViewPage extends GetView<RootViewController> {
         return PopScope(
           onPopInvokedWithResult: (didPop, result) => value.onDoubleBack(),
           child: Scaffold(
-            backgroundColor: ColorResources.BACKGROUND,
+            backgroundColor: ColorResources.BACKGROUND_BLACK,
             body: Obx(() => controller.pages[controller.currentIndex.value]
                 ['page'] as Widget),
             bottomNavigationBar: bottomNavigator(context),
@@ -52,8 +52,8 @@ class RootViewPage extends GetView<RootViewController> {
                   title,
                   style: TextStyle(
                     color: controller.currentIndex.value == index
-                        ? ColorResources.COLOR_080808
-                        : Colors.grey,
+                        ? ColorResources.PRIMARY_CONTENT_COLOR
+                        : ColorResources.LIGHT_GRAY,
                   ),
                 ),
               )
@@ -66,6 +66,14 @@ class RootViewPage extends GetView<RootViewController> {
 
   Widget bottomNavigator(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: ColorResources.STROKE,
+            width: 1,
+          ),
+        ),
+      ),
       // height: RkDimensions.ONE_UNIT_FONT * 50,
       child: CustomNavigationBar(
         // isFloating: true,
@@ -73,8 +81,8 @@ class RootViewPage extends GetView<RootViewController> {
         // selectedColor: Color(0xff040307),
         //strokeColor: ColorResources.PRIMARY_BG_COLOR,
         // unSelectedColor: Color(0xffacacac),
-        strokeColor: ColorResources.COLOR_EE3439,
-        backgroundColor: Colors.white,
+        strokeColor: ColorResources.STROKE,
+        backgroundColor: ColorResources.BACKGROUND_BLACK,
         items: [
           ...List.generate(controller.pages.length, (index) {
             return CustomNavigationBarItem(
@@ -86,7 +94,7 @@ class RootViewPage extends GetView<RootViewController> {
                     fontSize: RkDimensions.FONT_SIZE_SPAN_SMALL * 1,
                     fontWeight: FontWeight.w400,
                     fontFamily: Roboto,
-                    color: ColorResources.COLOR_515151,
+                    color: ColorResources.LIGHT_GRAY,
                   ),
                 ),
               ),

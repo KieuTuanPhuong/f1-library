@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -12,15 +13,38 @@ class HomeController extends GetxController {
   List menu = [
     {
       'title': 'Drivers',
-      'description': 'Hello',
+      'description': 'View driver information',
+      'icon': Icons.person_outline,
     },
     {
       'title': 'Teams',
-      'description': 'Hello',
+      'description': 'View constructor information',
+      'icon': Icons.groups_outlined,
     },
     {
       'title': 'Seasons',
-      'description': 'Hello',
+      'description': 'Explore past and current seasons',
+      'icon': Icons.history_edu_outlined,
+    },
+    {
+      'title': 'Results',
+      'description': 'Check race results',
+      'icon': Icons.flag_outlined,
+    },
+    {
+      'title': 'Standings',
+      'description': 'View driver and team standings',
+      'icon': Icons.leaderboard_outlined,
+    },
+    {
+      'title': 'Circuits',
+      'description': 'Discover race tracks details',
+      'icon': Icons.map_outlined,
+    },
+    {
+      'title': 'Races',
+      'description': 'Upcoming and past races',
+      'icon': Icons.sports_motorsports_outlined,
     },
   ];
 
