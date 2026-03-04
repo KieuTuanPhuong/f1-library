@@ -251,4 +251,7 @@ class APIEndPoint {
       'api/$year/$round';
   static String F1_CURRENT_LAST_RACE_INFO = 'api/current/last';
   static String F1_CURRENT_NEXT_RACE_INFO = 'api/current/next';
+
+  static String WIKIPEDIA_IMAGE(String title) =>
+      'https://en.wikipedia.org/api/rest_v1/page/summary/$title';
 }
